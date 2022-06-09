@@ -5,32 +5,35 @@
     <form>
       <div class="form-group">
         <label for="name">Nombre completo</label>
-        <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp" placeholder="Ingrese Nombre" 
-        [(ngModel)]="contacto.name">
+        <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp"
+          placeholder="Ingrese Nombre" [(ngModel)]="contacto.name">
         <!-- <small id="nameHelp" class="form-text text-muted">Ingrese el Nombre completo</small> -->
       </div>
       <div class="form-group">
         <label for="number">Número Telefónico</label>
-        <input type="text" class="form-control" name="number" placeholder="Ingrese el número telefónico" 
-        [(ngModel)]="contacto.number">
+        <input type="text" class="form-control" name="number" placeholder="Ingrese el número telefónico"
+          [(ngModel)]="contacto.number">
       </div>
       <div class="form-group">
         <label for="relationship">Parentesco</label>
         <input type="text" class="form-control" name="relationship" placeholder="Ingrese el parentesco"
-        [(ngModel)]="contacto.relationship">
+          [(ngModel)]="contacto.relationship">
       </div>
 
-      <div class="form-group">
-        <label for="id">id</label>
-        <input type="number" class="form-control" name="id" 
-        [(ngModel)]="contacto.id">
-      </div>
+      <!-- <div class="form-group"> -->
+        <!-- <label for="id">id</label> -->
+        <!-- <input style="display:none" type="number" name="id" [(ngModel)]="contacto.id"> -->
+      <!-- </div> -->
       <div class="form-group">
         <label for="userid">userid</label>
-        <input type="number" class="form-control" name="userid" 
-        [(ngModel)]="contacto.userid">
+        <input type="number" class="form-control" name="userid" [(ngModel)]="contacto.userid">
       </div>
-      <button type="submit" class="btn btn-primary" role="button" (click)="createContacto();">Registrar Contacto</button>
+      <button type="submit" class="btn btn-success" role="button" (click)="createContacto();" *ngIf="!contacto.id else update">Registrar
+        Contacto</button>
+      <ng-template #update>
+        <button type="submit" class="btn btn-danger" role="button" (click)="updateContacto();">Actualizar Contacto</button>
+      </ng-template>
+
     </form>
   </div>
 

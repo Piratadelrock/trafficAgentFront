@@ -23,7 +23,7 @@ export class ContactosService {
       (response: any) => response.contacto));
   }
 
-  // obtener un contacto 
+  // obtener o cargar un contacto por id
   getContactoById(id: number): Observable<any>{
     return this.http.get<Respuesta>(this.urlEndPoint + "/" + id);
       // return this.http.get<Respuesta>(this.urlEndPoint + "/" + id).pipe(
@@ -32,15 +32,16 @@ export class ContactosService {
   }
 
   // // actualizar un contacto
-  // updateContacto(contacto: Contacto): Observable<any>{
-  //   return this.http.put('${this.urlEndPoint}/${contacto.id}', contacto).pipe(
-  //     map( (response: any) => response.contacto));
-  //   return this.http.put<Contacto>(this.urlEndPoint, contacto);
-  // }
+  updateContacto(contacto: Contacto): Observable<any>{
+    return this.http.put('${this.urlEndPoint}/${contacto.id}', contacto).pipe(
+      map( (response: any) => response.contacto));
+    return this.http.put<Contacto>(this.urlEndPoint, contacto);
+  }
 
   // // eliminar un contacto
   deleteContacto(id: number): Observable<any>{
     return this.http.delete(`${this.urlEndPoint}/${id}`);
+    // return this.http.delete<Respuesta>(`${this.urlEndPoint}/${id}`);
   }
 
 

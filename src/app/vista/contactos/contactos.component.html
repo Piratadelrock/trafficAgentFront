@@ -22,7 +22,7 @@
                 <td> {{contacto.userid}}</td>
                 <td>
                     <button type="button" class="btn btn-primary" [routerLink]="['/contactos/editar/', contacto.id]">Editar Contacto</button>
-                    <!-- <button type="button" class="btn btn-danger" (click)="deleteContacto(contacto.id)">Eliminar Contacto</button>  -->
+                    <button type="button" class="btn btn-danger" (click)="deleteContacto(contacto)">Eliminar Contacto</button> 
                 </td>
             </tr>
         </tbody>

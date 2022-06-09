@@ -37,13 +37,13 @@ export class FormContactoComponent implements OnInit {
     
   }
 
-  // updateContacto(){
-  //   this.contactoService.updateContacto(this.contacto).subscribe(
-  //     res => { 
-  //       this.router.navigate(['/contactos']);
-  //     }
-  //   );
-  // }
+  updateContacto(){
+    this.contactoService.updateContacto(this.contacto).subscribe(
+      res => { 
+        this.router.navigate(['/contactos']);
+      }
+    );
+  }
 
    createContacto(): void {
     console.log(this.contacto);
@@ -55,4 +55,5 @@ export class FormContactoComponent implements OnInit {
   }
 
 
+  
 }

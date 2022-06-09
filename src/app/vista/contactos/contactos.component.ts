@@ -27,6 +27,17 @@ export class ContactosComponent implements OnInit {
     );
   }
 
+  deleteContacto(contacto:Contacto): void {
+    this.contactoService.deleteContacto(contacto.id).subscribe(
+      res => this.contactoService.getAllContacto().subscribe(
+          Response => this.contactos = Response.data
+        )
+    );
+  }
+
+
+
+
   // para ver los objetos en consola
   objectKeys (objeto: any) {
     const keys = Object.keys(objeto); 
