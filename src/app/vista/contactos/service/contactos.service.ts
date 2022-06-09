@@ -19,7 +19,8 @@ export class ContactosService {
 
   // crear un nuevo contacto
   createContacto(contacto: Contacto): Observable<any>{
-    return this.http.post(this.urlEndPoint, contacto);
+    return this.http.post(this.urlEndPoint, contacto).pipe(map(
+      (response: any) => response.contacto));
   }
 
   // // obtener un contacto 
