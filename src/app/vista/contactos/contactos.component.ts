@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Contacto } from 'src/app/models/contacto';
+import { Contacto, Respuesta } from 'src/app/models/contacto';
 import { ContactosService } from './service/contactos.service';
 
 @Component({
@@ -16,10 +16,23 @@ export class ContactosComponent implements OnInit {
   constructor(private contactoService:ContactosService ) { }  
 
   ngOnInit(): void {
-    this.contactoService.getAllContacto().subscribe(
-      (contacto) => { this.contactos = contacto; }
-    );
+    
 
   }
+
+  public getAllContactoService(): void {
+    this.contactoService.getAllContacto().subscribe(
+      (contacto) => { 
+        this.contactos = contacto;
+      }
+    );
+  }
+
+  // 
+  objectKeys (objeto: any) {
+    const keys = Object.keys(objeto); 
+    console.log(keys);
+    return keys;
+ }
 
 }

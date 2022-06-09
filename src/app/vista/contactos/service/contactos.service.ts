@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Contacto } from 'src/app/models/contacto';
+import { Contacto, Respuesta } from 'src/app/models/contacto';
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +14,12 @@ export class ContactosService {
 
 
   // obtener el listado de contactos
-  getAllContacto(): Observable<Contacto[]>{
-    return this.http.get<Contacto[]>(this.urlEndPoint);   
+  getAllContacto(): Observable<Respuesta[]>{
+    return this.http.get<Respuesta[]>(this.urlEndPoint);   
 
   }
 
-  // getAllContacto(): Observable<any>{
+  // getAllContacto(){
   //   return this.http.get(this.urlEndPoint);   
   // }
 

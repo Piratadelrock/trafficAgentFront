@@ -3,16 +3,10 @@ export class Contacto {
     number: string = '';
     name: string = "";
     relationship: string = "";
-    userId: number = 0;
+    userid: number = 0;
+}
 
-    // objecto_respuesta: Array<Contacto>
-    
-    // constructor() {
-    //     this.id = 0;
-    //     this.number = '';
-    //     this.name = "";
-    //     this.relationship = "";
-    //     this.objecto_respuesta= [];
-
-    // }
+export interface Respuesta{
+    data: Contacto[];
+    messages:string[];
 }
