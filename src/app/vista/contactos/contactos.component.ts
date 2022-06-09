@@ -11,24 +11,23 @@ export class ContactosComponent implements OnInit {
 
   titulo:string = "Lista de Contactos de emergencia!";
 
-  contactos:Contacto[] = [];
+  public contactos:Contacto[] = [];
 
   constructor(private contactoService:ContactosService ) { }  
 
   ngOnInit(): void {
-    
-
+    this.getAllContactoService();
   }
 
-  public getAllContactoService(): void {
+  public getAllContactoService() {
     this.contactoService.getAllContacto().subscribe(
-      (contacto) => { 
-        this.contactos = contacto;
+      (res:Respuesta) => {
+        this.contactos=res.data;
       }
     );
   }
 
-  // 
+  // para ver los objetos en consola
   objectKeys (objeto: any) {
     const keys = Object.keys(objeto); 
     console.log(keys);

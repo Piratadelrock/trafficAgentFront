@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Contacto, Respuesta } from 'src/app/models/contacto';
 
 @Injectable({
@@ -12,16 +12,10 @@ export class ContactosService {
 
   constructor(private http:HttpClient) { } 
 
-
   // obtener el listado de contactos
-  getAllContacto(): Observable<Respuesta[]>{
-    return this.http.get<Respuesta[]>(this.urlEndPoint);   
-
+  getAllContacto(){
+    return this.http.get<Respuesta>(this.urlEndPoint);
   }
-
-  // getAllContacto(){
-  //   return this.http.get(this.urlEndPoint);   
-  // }
 
 
   // crear un nuevo contacto
