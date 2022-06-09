@@ -8,6 +8,7 @@ import { ContactosComponent } from './vista/contactos/contactos.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormContactoComponent } from './vista/contactos/crearContacto/form-contacto.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { FormContactoComponent } from './vista/contactos/crearContacto/form-cont
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

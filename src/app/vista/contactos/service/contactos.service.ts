@@ -17,10 +17,9 @@ export class ContactosService {
     return this.http.get<Respuesta>(this.urlEndPoint);
   }
 
-
   // crear un nuevo contacto
-  createContacto(contacto: Contacto): Observable<Contacto>{
-    return this.http.post<Contacto>(this.urlEndPoint, contacto);
+  createContacto(contacto: Contacto): Observable<any>{
+    return this.http.post(this.urlEndPoint, contacto);
   }
 
   // // obtener un contacto 

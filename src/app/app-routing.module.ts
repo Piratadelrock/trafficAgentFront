@@ -5,11 +5,9 @@ import { FormContactoComponent } from './vista/contactos/crearContacto/form-cont
 
 const routes: Routes = [
     
-  // redirigiendo a contactos no existe componente principal
-    { path: '', redirectTo: '/contactos', pathMatch: 'full' },
+    { path: '', redirectTo: '/contactos/crear', pathMatch: 'full' },
     { path: 'contactos', component: ContactosComponent },
     { path: 'contactos/crear', component: FormContactoComponent },
-    
 
     
 ];
