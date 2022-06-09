@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>{{titulo}}</h1>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Parentesco</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">userID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <th scope="row">id</th>
+                <td> perass</td>
+                <td>s asd</td>
+                <td> 0000</td>
+            </tr> -->
+
+            <tr *ngFor="let contacto of contactos">
+                <th scope="row">{{contacto.id}}</th>
+                <td> {{contacto.name}}</td>
+                <td> {{contacto.relationship}}</td>
+                <td> {{contacto.number}}</td>
+                <td> {{contacto.userId}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
