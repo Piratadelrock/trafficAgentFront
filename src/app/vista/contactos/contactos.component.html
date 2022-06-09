@@ -10,6 +10,7 @@
                 <th scope="col">Parentesco</th>
                 <th scope="col">Telefono</th>
                 <th scope="col">userID</th>
+                <th scope="col">Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +20,10 @@
                 <td> {{contacto.relationship}}</td>
                 <td> {{contacto.number}}</td>
                 <td> {{contacto.userid}}</td>
+                <td>
+                    <button type="button" class="btn btn-primary" [routerLink]="['/contactos/editar/', contacto.id]">Editar Contacto</button>
+                    <!-- <button type="button" class="btn btn-danger" (click)="deleteContacto(contacto.id)">Eliminar Contacto</button>  -->
+                </td>
             </tr>
         </tbody>
     </table>

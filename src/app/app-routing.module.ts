@@ -8,6 +8,8 @@ const routes: Routes = [
     { path: '', redirectTo: '/contactos/crear', pathMatch: 'full' },
     { path: 'contactos', component: ContactosComponent },
     { path: 'contactos/crear', component: FormContactoComponent },
+    { path: 'contactos/editar/:id', component: FormContactoComponent }
+    
 
     
 ];
