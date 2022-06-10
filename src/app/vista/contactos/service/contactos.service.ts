@@ -33,14 +33,15 @@ export class ContactosService {
 
   // // actualizar un contacto
   updateContacto(contacto: Contacto): Observable<any>{
-    return this.http.put('${this.urlEndPoint}/${contacto.id}', contacto).pipe(
+    return this.http.put(`${this.urlEndPoint}/${contacto.id}`, contacto).pipe(
       map( (response: any) => response.contacto));
-    return this.http.put<Contacto>(this.urlEndPoint, contacto);
+    // return this.http.put<Contacto>(this.urlEndPoint, contacto);
   }
 
   // // eliminar un contacto
   deleteContacto(id: number): Observable<any>{
-    return this.http.delete(`${this.urlEndPoint}/${id}`);
+    return this.http.delete(this.urlEndPoint+"/"+id);
+    // return this.http.delete(`${this.urlEndPoint}/${id}`);
     // return this.http.delete<Respuesta>(`${this.urlEndPoint}/${id}`);
   }
 
