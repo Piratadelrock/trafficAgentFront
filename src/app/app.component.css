@@ -4,3 +4,8 @@ h1 {
     font-family: 'Roboto', sans-serif;
     background-color: #454d55;
 }
+
+.pointer
+{
+    cursor: pointer;
+}
